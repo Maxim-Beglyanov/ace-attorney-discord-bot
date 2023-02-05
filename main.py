@@ -31,7 +31,7 @@ def loadConfig():
             config = yaml.load(file, Loader=yaml.FullLoader)
             global token, prefix, deletionDelay, max_per_guild, max_per_user, invite_link
 
-            token = config["token"].strip()
+            token = os.environ['DISCORD_TOKEN']
             if not token:
                 raise Exception("The 'token' field is missing in the config file (config.yaml)!")
 
